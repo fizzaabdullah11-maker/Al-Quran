@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <title>Qur'an Admin</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="admin-page">
+    <main class="admin-page-shell">
+      <section class="quran-admin" aria-labelledby="admin-title">
+        <header class="admin-header">
+          <div>
+            <p class="admin-eyebrow">CONTENT MANAGEMENT</p>
+            <h1 id="admin-title">Qur'an admin panel</h1>
+          </div>
+          <div class="admin-header-actions">
+            <label class="surah-picker" for="surah-select">
+              <span>Surah</span>
+              <select id="surah-select" aria-label="Choose a surah" disabled></select>
+            </label>
+            <button id="sign-out" class="admin-sign-out" type="button">Sign out</button>
+          </div>
+        </header>
+
+        <div class="admin-content">
+          <div class="admin-toolbar">
+            <label class="admin-search" for="ayah-search">
+              <span class="sr-only">Search ayahs</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.3" /><path d="m16 16 4.2 4.2" /></svg>
+              <input id="ayah-search" type="search" placeholder="Search the selected surah" disabled />
+            </label>
+            <button id="export-data" class="admin-button secondary" type="button" disabled>Export JSON</button>
+          </div>
+          <p id="admin-status" class="admin-status" role="status" aria-live="polite">Loading Qur'an index…</p>
+          <div id="ayah-list" class="ayah-list" aria-live="polite"></div>
+        </div>
+      </section>
+    </main>
+
+    <div id="admin-toast" class="admin-toast" role="status" aria-live="polite"></div>
+    <script src="admin.js"></script>
+  </body>
+</html>
